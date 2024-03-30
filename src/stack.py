@@ -34,4 +34,14 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        pass
+        if self.top is None:
+            return None
+        data = self.top.data
+        self.top = self.top.next_node
+        return data
+
+    def peek(self):
+        return self.top.data if self.top is not None else None
+
+    def __str__(self):
+        return f'{self.data}'
